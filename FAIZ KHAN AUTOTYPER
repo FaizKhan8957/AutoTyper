@@ -1,0 +1,31 @@
+from tkinter import *
+
+
+def autotyper():
+    import pyautogui
+    import time
+    time.sleep(5)
+    count=0
+    while count<1:
+        pyautogui.typewrite(codeinput.get())
+
+        pyautogui.press("enter")
+        count=count+1
+
+
+window = Tk()
+window.title("FAIZ KHAN AUTOTYPER")
+window.minsize(height=300 , width=500)
+window.config(padx=40,pady=40)
+
+codeinput=Entry(width=50,bg="lightgreen",fg="red")
+codeinput.place(x=10,y=50)
+
+codelabel=Label(text="PASTE YOUR CODE HERE",font=("Helvetica",11,"bold"))
+codelabel.place(x=10,y=15)
+
+
+calculatebutton=Button(text="ENTER",font=("Helvetica",10,"bold"),command=autotyper)
+calculatebutton.place(x=10,y=80)
+
+window.mainloop()
